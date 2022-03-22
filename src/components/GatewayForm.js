@@ -32,7 +32,7 @@ const GatewayForm = ({ createGateway }) => {
 
   return (
     <Row>
-      <Col xs={3}>
+      <Col xs={12}>
         <Form onSubmit={addGateway}>
           <Form.Group>
             <h4>Add a new Gateway</h4>
