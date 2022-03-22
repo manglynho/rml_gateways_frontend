@@ -9,6 +9,8 @@ import { setNotification } from './reducers/notificationReducer'
 import { initializeGateways } from './reducers/gatewayReducer'
 import { useDispatch } from 'react-redux'
 
+import Container from 'react-bootstrap/Container'
+
 const App = () => {
   const [gateways, setGateways] = useState([])
 
@@ -43,13 +45,13 @@ const App = () => {
   )
 
   return (
-    <div>
+    <Container>
       <h2>Gateways App</h2>
       <Notification/>
       {gatewayForm(addGateway)}
       <hr/>
       <GatewayList/>
-    </div>
+    </Container>
   )
 }
 export default App

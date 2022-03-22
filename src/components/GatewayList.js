@@ -3,10 +3,11 @@ import { connect } from 'react-redux'
 import { removeGateway } from '../reducers/gatewayReducer'
 import { setNotification } from '../reducers/notificationReducer'
 import Gateway from '../components/Gateway'
+import { Row } from 'react-bootstrap'
 
 const GatewayList = (props) => {
   return(
-    <div>
+    <Row>
       {props.gateways.map(gateway =>
         <Gateway
           key={gateway.id}
@@ -19,7 +20,7 @@ const GatewayList = (props) => {
           }
         />
       )}
-    </div>
+    </Row>
   )
 }
 

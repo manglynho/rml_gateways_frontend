@@ -1,23 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import { Button , Col, Card } from 'react-bootstrap'
 
 const Gateway = ({ gateway, byeGateway }) => {
   const [advPanelVisible, setAdvPanelVisible] = useState(false)
-
-  const gatewayStyle = {
-    paddingTop: 10,
-    paddingLeft: 2,
-    border: 'solid',
-    borderWidth: 1,
-    marginBottom: 5
-  }
-
-  const removeBtnStyle ={
-    color: 'white',
-    backgroundColor: 'red',
-    borderColor:'red',
-    borderRadius: '10%'
-  }
 
   const hideWhenVisible = { display: advPanelVisible ? 'none' : '' }
   const showWhenVisible = { display: advPanelVisible ? '' : 'none' }
@@ -27,10 +13,14 @@ const Gateway = ({ gateway, byeGateway }) => {
     return (
       <span>
         <span style={hideWhenVisible}>
-          <button onClick={() => setAdvPanelVisible(true)}>View</button>
+          <Button onClick={() => setAdvPanelVisible(true)} variant="outline-secondary" type="button" size="sm">
+            View
+          </Button>
         </span>
         <span style={showWhenVisible}>
-          <button onClick={() => setAdvPanelVisible(false)}>Hide</button>
+          <Button onClick={() => setAdvPanelVisible(false)} variant="outline-secondary" type="button" size="sm">
+            Hide
+          </Button>
         </span>
       </span>
     )
@@ -46,19 +36,21 @@ const Gateway = ({ gateway, byeGateway }) => {
           <div>
             {gateway.ip_v4}
           </div>
-          <button className='removeBtn' style={removeBtnStyle} onClick={byeGateway}>Remove</button>
+          <Button className='removeBtn' onClick={byeGateway} variant="danger" type="button" size="sm">Remove</Button>
         </div>
       </div>
     )
   }
 
   return (
-    <div className='gateway_element' style={gatewayStyle}>
-      <div>
-        <a href={`api/gateways/${gateway.id}`} rel='noreferrer' target='_blank'>{gateway.name}</a> {advancedGatewayPanelButtons()}
-        {advancedGatewayPanel()}
-      </div>
-    </div>
+    <Col xs={3} className='gateway_element mb-3'>
+      <Card>
+        <Card.Body>
+          <a href={`api/gateways/${gateway.id}`} rel='noreferrer' target='_blank'>{gateway.name}</a> {advancedGatewayPanelButtons()}
+          {advancedGatewayPanel()}
+        </Card.Body>
+      </Card>
+    </Col>
   )}
 
 Gateway.propTypes = {

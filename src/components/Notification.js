@@ -1,15 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Alert from 'react-bootstrap/Alert'
 
 const Notification = (props) => {
   if (props.notification === null) {
     return null
   }
 
+  let alert_style = props.style
+  if(alert_style === 'error'){
+    alert_style = 'danger'
+  }
+
   return (
-    <div className={props.style}>
+    <Alert variant={alert_style}>
       {props.notification}
-    </div>
+    </Alert>
   )
 }
 
