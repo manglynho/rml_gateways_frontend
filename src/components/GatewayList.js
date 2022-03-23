@@ -38,7 +38,11 @@ const GatewayList = (props) => {
   const columns = [
     { id: 'name',
       name: 'Name',
-      selector: row => row.name,
+      cell: (record) => {
+        return(
+          <a href={`/api/gateways/${record.id}`} target='_blank' rel="noreferrer">{record.name}</a>
+        )},
+      //selector: row => row.name,
     },
     { id: 'serial',
       name: 'Serial',
@@ -57,7 +61,7 @@ const GatewayList = (props) => {
       cell: (record) => {
         return (
           <button
-            className="btn btn-danger btn-sm"
+            className="btn btn-danger btn-sm removeBtn"
             onClick={() => {
               if (window.confirm(`Delete ${record.name} ?`)) {
                 props.removeGateway(record)

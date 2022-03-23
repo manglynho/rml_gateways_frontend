@@ -31,7 +31,7 @@ const Device = ({ device }) => {
     <Col sm={3} className="mt-3">
       <Card>
         <ListGroup variant="flush">
-          <ListGroup.Item>uid: { device.uid } </ListGroup.Item>
+          <ListGroup.Item>uid: <a href={`/api/devices/${device.id}`} target='_blank' rel="noreferrer">{ device.uid } </a></ListGroup.Item>
           <ListGroup.Item>vendor: { device.vendor }</ListGroup.Item>
           <ListGroup.Item>date: { dateFormat( device.date, 'mmmm dS, yyyy')  }</ListGroup.Item>
           <ListGroup.Item>status: {

@@ -72,8 +72,9 @@ const App = () => {
   return (
     <Container>
       <h2>Gateways App</h2>
+      <a href='/api/gateways' target='_blank' rel='noreferrer'>Gateway Api</a> | <a href='/api/devices' target='_blank' rel='noreferrer'>Devices Api</a>
       <Notification/>
-      <Row>
+      <Row className='mt-3'>
         <Col md={4}>{gatewayForm(addGateway)}</Col>
         <Col md={4}>{deviceForm(addDevice)}</Col>
       </Row>

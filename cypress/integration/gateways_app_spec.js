@@ -21,8 +21,7 @@ describe('Gateway app', function() {
       })
 
       it('can be removed', function () {
-        cy.contains('TESTGATEWAYD').parent().as('MyContainer')
-        cy.get('@MyContainer').contains('View').click()
+        cy.get('html').find('.rdt_TableBody').contains('TESTGATEWAYD').parent('').parent('').as('MyContainer')
         cy.get('@MyContainer').find('.removeBtn').click()
         cy.get('html').should('not.contain', 'S996999')
       })

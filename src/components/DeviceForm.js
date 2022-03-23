@@ -24,7 +24,6 @@ const DeviceForm = ( props ) => {
     setdeviceGateway(event.target.value)
   }
 
-
   const addDevice = async (event) => {
     event.preventDefault()
     const result = await props.createDevice({
