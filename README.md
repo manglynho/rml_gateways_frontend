@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Gateway App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 1. This project cointains two separate apps for frontend and backend:
 
-## Available Scripts
+[Backend on GitHub](https://github.com/manglynho/rml_gateways)
 
-In the project directory, you can run:
+[Frontend on GitHub](https://github.com/manglynho/rml_gateways_frontend)
 
-### `npm start`
+-In both cases after cloning from github run:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+>npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-Start each project with command:
 
-### `npm test`
+>npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Backend already contains a frontend build and it's ready for separated work. 
 
-### `npm run build`
+### 2. Database
+The project uses mongoDB. I already setup two databases for production and test. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Im sharing the **.env** with connection data, but you can use your own setup. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. Requests
+I wrote two requests files (./requests/ ) that can be used to test the api. 
+You can run those using VsCode or copy the info to Postman.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4. Tests
+Test suites are stored in the test folder and contain jest tests and data for main requirements and validation.
 
-### `npm run eject`
+Also there are a test for the GatewayForm component in frontend app.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Trigger test with command:
+>npm run test
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Frontend has a test suite implemented with Cypress that you can start with the command: 
+>npm run cypress:open
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 5. Since the Backend it's the main result for this task i already setup a Heroku App for automatic deploys. 
+So any changes commited to the backend repo will be deployed automaticaly on the heroku app created.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Gateway App on Heroku](https://reiner-gateways-app.herokuapp.com)
